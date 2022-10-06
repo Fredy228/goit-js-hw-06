@@ -8,15 +8,10 @@ const ingredients = [
 ];
 
 const listIngredients = document.querySelector('#ingredients');
+const arrayIngredients = [];
 
 for (const ingredient of ingredients) {
-  const itemIngredients = document.createElement('li');
-
-  itemIngredients.textContent = ingredient;
-  listIngredients.appendChild(itemIngredients);
+  arrayIngredients.push(`<li class="item">${ingredient}</li>`);
 };
 
-
-
-
-
+listIngredients.insertAdjacentHTML("afterbegin", arrayIngredients.join(""));
